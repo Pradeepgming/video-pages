@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- superhits.html  |  lightweight redirect page -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Superhits – autoplay videos</title>
+
+  <script>
+    /* ▼▼ EDIT THIS ARRAY ANYTIME TO CHANGE OR RE‑ORDER VIDEOS ▼▼ */
+    const videoIds = [
+      "Gp1RNYBckBs",   // Guli Mata
+      "hoNb6HuNmU0"    // Khairiyat
+    ];
+    /* ▲▲ just add more IDs like "abcdEFGH123", "wXyZ9876" ...   */
+
+    // Build the YouTube “watch_videos” URL
+    const target = "https://www.youtube.com/watch_videos?video_ids="
+                   + videoIds.join(",")
+                   + "&autoplay=1";
+
+    // Immediately send the user there
+    window.location.replace(target);
+  </script>
+
+  <style>
+    body { font-family: sans-serif; display:flex; height:100vh;
+           align-items:center; justify-content:center; }
+    a { font-size:1.2rem; }
+  </style>
+</head>
+<body>
+  <!-- Fallback link for browsers with JS disabled -->
+  <p>If you are not redirected automatically, <a id="ytLink" href="#">click here</a>.</p>
+  <script> document.getElementById("ytLink").href = target; </script>
+</body>
+</html>
